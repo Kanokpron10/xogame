@@ -43,14 +43,14 @@ func (game Game) checkWin() string {
 	if game.Board[0][0] == "x" &&
 		game.Board[0][1] == "x" &&
 		game.Board[0][2] == "x" {
-		return "WIN Horizontal first line"
+		return game.turn + " WIN Horizontal first line"
 	}
 	if game.Board[1][0] == "x" &&
 		game.Board[1][1] == "x" &&
 		game.Board[1][2] == "x" {
-		return "WIN Horizontal second line"
+		return game.turn + " WIN Horizontal second line"
 	}
-	return "x WINNER"
+	return "WINNER"
 }
 
 func (game Game) switchTurn() {
