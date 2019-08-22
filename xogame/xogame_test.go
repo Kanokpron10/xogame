@@ -90,6 +90,23 @@ func Test_PlayerOne_Win_Vertical_SecondLine(t *testing.T) {
 	}
 }
 
+func Test_PlayerOne_Win_Vertical_ThirdLine(t *testing.T) {
+	expected := "x WIN Vertical"
+	player1 := xogame.NewPlayer("Mo", "x")
+	player2 := xogame.NewPlayer("Praw", "o")
+	game := xogame.NewGame(player1, player2, "x")
+
+	game.Play(player1, 0, 2)
+	game.Play(player2, 2, 0)
+	game.Play(player1, 1, 2)
+	game.Play(player2, 1, 1)
+	actual := game.Play(player1, 2, 2)
+
+	if expected != actual {
+		t.Errorf("Expect %s but got %s", expected, actual)
+	}
+}
+
 func Test_PlayerOne_Win_TopLeftDiagonal(t *testing.T) {
 	expected := "x WIN Diagonal"
 	player1 := xogame.NewPlayer("Mo", "x")
