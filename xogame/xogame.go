@@ -40,32 +40,38 @@ func (game *Game) marking(player Player, row, column int) {
 }
 
 func (game Game) checkWin() string {
-	if game.Board[0][0] == "x" &&
-		game.Board[0][1] == "x" &&
-		game.Board[0][2] == "x" {
-		return game.turn + " WIN Horizontal first line"
+	if game.checkWinHorizontal() {
+		return game.turn + " WIN Horizontal"
 	}
-	if game.Board[1][0] == "x" &&
-		game.Board[1][1] == "x" &&
-		game.Board[1][2] == "x" {
-		return game.turn + " WIN Horizontal second line"
-	}
-	if game.Board[2][0] == "x" &&
-		game.Board[2][1] == "x" &&
-		game.Board[2][2] == "x" {
-		return game.turn + " WIN Horizontal third line"
-	}
-	if game.Board[0][0] == "x" &&
-		game.Board[1][1] == "x" &&
-		game.Board[2][2] == "x" {
-		return game.turn + " WIN Top left diagonal"
-	}
-	if game.Board[0][2] == "x" &&
-		game.Board[1][1] == "x" &&
-		game.Board[2][0] == "x" {
-		return game.turn + " WIN Down left diagonal"
+	if game.checkWinDiagonal() {
+		return game.turn + " WIN Diagonal"
 	}
 	return "WINNER"
+}
+
+func (game Game) checkWinDiagonal() bool {
+	if game.Board[0][0] == game.turn &&
+		game.Board[1][1] == game.turn &&
+		game.Board[2][2] == game.turn {
+		return true
+	}
+	if game.Board[0][2] == game.turn &&
+		game.Board[1][1] == game.turn &&
+		game.Board[2][0] == game.turn {
+		return true
+	}
+	return false
+}
+
+func (game Game) checkWinHorizontal() bool {
+	for index := range game.Board {
+		if game.Board[index][0] == game.turn &&
+			game.Board[index][1] == game.turn &&
+			game.Board[index][2] == game.turn {
+			return true
+		}
+	}
+	return false
 }
 
 func (game *Game) switchTurn() {
