@@ -43,10 +43,35 @@ func (game Game) checkWin() string {
 	if game.checkWinHorizontal() {
 		return game.turn + " WIN Horizontal"
 	}
+	if game.checkWinVertical() {
+		return game.turn + " WIN Vertical"
+	}
 	if game.checkWinDiagonal() {
 		return game.turn + " WIN Diagonal"
 	}
-	return "WINNER"
+	return "TIE"
+}
+
+func (game Game) checkWinHorizontal() bool {
+	for index := range game.Board {
+		if game.Board[index][0] == game.turn &&
+			game.Board[index][1] == game.turn &&
+			game.Board[index][2] == game.turn {
+			return true
+		}
+	}
+	return false
+}
+
+func (game Game) checkWinVertical() bool {
+	for index := range game.Board {
+		if game.Board[0][index] == game.turn &&
+			game.Board[1][index] == game.turn &&
+			game.Board[2][index] == game.turn {
+			return true
+		}
+	}
+	return false
 }
 
 func (game Game) checkWinDiagonal() bool {
@@ -59,17 +84,6 @@ func (game Game) checkWinDiagonal() bool {
 		game.Board[1][1] == game.turn &&
 		game.Board[2][0] == game.turn {
 		return true
-	}
-	return false
-}
-
-func (game Game) checkWinHorizontal() bool {
-	for index := range game.Board {
-		if game.Board[index][0] == game.turn &&
-			game.Board[index][1] == game.turn &&
-			game.Board[index][2] == game.turn {
-			return true
-		}
 	}
 	return false
 }
