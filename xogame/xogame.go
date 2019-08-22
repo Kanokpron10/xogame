@@ -53,6 +53,10 @@ func (game Game) checkWin() string {
 	return "WINNER"
 }
 
-func (game Game) switchTurn() {
-
+func (game *Game) switchTurn() {
+	if game.turn == "x" {
+		game.turn = "o"
+	} else {
+		game.turn = "x"
+	}
 }
