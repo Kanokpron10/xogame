@@ -50,6 +50,11 @@ func (game Game) checkWin() string {
 		game.Board[1][2] == "x" {
 		return game.turn + " WIN Horizontal second line"
 	}
+	if game.Board[2][0] == "x" &&
+		game.Board[2][1] == "x" &&
+		game.Board[2][2] == "x" {
+		return game.turn + " WIN Horizontal third line"
+	}
 	return "WINNER"
 }
 
