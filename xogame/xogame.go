@@ -49,7 +49,10 @@ func (game Game) checkWin() string {
 	if game.checkWinDiagonal() {
 		return game.turn + " WIN Diagonal"
 	}
-	return "Tie"
+	if game.checkFullBoard() {
+		return "Tie"
+	}
+	return "No winner"
 }
 
 func (game Game) checkWinHorizontal() bool {
