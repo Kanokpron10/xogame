@@ -6,7 +6,7 @@ import (
 )
 
 func Test_PlayerOne_Win_Horizontal_FirstLine_(t *testing.T) {
-	expected := "x WIN Horizontal first line"
+	expected := "x WIN Horizontal"
 	player1 := xogame.NewPlayer("Mo", "x")
 	player2 := xogame.NewPlayer("Praw", "o")
 	game := xogame.NewGame(player1, player2, "x")
@@ -23,7 +23,7 @@ func Test_PlayerOne_Win_Horizontal_FirstLine_(t *testing.T) {
 }
 
 func Test_PlayerOne_Win_Horizontal_SecondLine(t *testing.T) {
-	expected := "x WIN Horizontal second line"
+	expected := "x WIN Horizontal"
 	player1 := xogame.NewPlayer("Mo", "x")
 	player2 := xogame.NewPlayer("Praw", "o")
 	game := xogame.NewGame(player1, player2, "x")
@@ -40,7 +40,7 @@ func Test_PlayerOne_Win_Horizontal_SecondLine(t *testing.T) {
 }
 
 func Test_PlayerOne_Win_Horizontal_ThirdLine(t *testing.T) {
-	expected := "x WIN Horizontal third line"
+	expected := "x WIN Horizontal"
 	player1 := xogame.NewPlayer("Mo", "x")
 	player2 := xogame.NewPlayer("Praw", "o")
 	game := xogame.NewGame(player1, player2, "x")
@@ -57,7 +57,7 @@ func Test_PlayerOne_Win_Horizontal_ThirdLine(t *testing.T) {
 }
 
 func Test_PlayerOne_Win_TopLeftDiagonal(t *testing.T) {
-	expected := "x WIN Top left diagonal"
+	expected := "x WIN Diagonal"
 	player1 := xogame.NewPlayer("Mo", "x")
 	player2 := xogame.NewPlayer("Praw", "o")
 	game := xogame.NewGame(player1, player2, "x")
@@ -74,7 +74,7 @@ func Test_PlayerOne_Win_TopLeftDiagonal(t *testing.T) {
 }
 
 func Test_PlayerOne_Win_DownLeftDiagonal(t *testing.T) {
-	expected := "x WIN Down left diagonal"
+	expected := "x WIN Diagonal"
 	player1 := xogame.NewPlayer("Mo", "x")
 	player2 := xogame.NewPlayer("Praw", "o")
 	game := xogame.NewGame(player1, player2, "x")
@@ -91,7 +91,7 @@ func Test_PlayerOne_Win_DownLeftDiagonal(t *testing.T) {
 }
 
 func Test_PlayerTwo_Win_Horizontal_FirstLine(t *testing.T) {
-	expected := "o WIN Horizontal first line"
+	expected := "o WIN Horizontal"
 	player1 := xogame.NewPlayer("Mo", "x")
 	player2 := xogame.NewPlayer("Praw", "o")
 	game := xogame.NewGame(player1, player2, "x")
