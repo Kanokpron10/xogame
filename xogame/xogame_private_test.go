@@ -64,3 +64,17 @@ func Test_CheckWin_Win_Horizontal_SecondLine(t *testing.T) {
 		t.Errorf("Expect %v but got %v", expected, actual)
 	}
 }
+
+func Test_SwitchTurn_Should_Be_O(t *testing.T) {
+	expected := "o"
+	player1 := NewPlayer("Mo", "x")
+	player2 := NewPlayer("Praw", "o")
+	game := NewGame(player1, player2, "x")
+
+	game.switchTurn()
+	actual := game.turn
+
+	if expected != actual {
+		t.Errorf("Expect %s but got %s", expected, actual)
+	}
+}
