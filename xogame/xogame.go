@@ -60,6 +60,11 @@ func (game Game) checkWin() string {
 		game.Board[2][2] == "x" {
 		return game.turn + " WIN Top left diagonal"
 	}
+	if game.Board[0][2] == "x" &&
+		game.Board[1][1] == "x" &&
+		game.Board[2][0] == "x" {
+		return game.turn + " WIN Down left diagonal"
+	}
 	return "WINNER"
 }
 
