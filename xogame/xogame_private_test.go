@@ -34,7 +34,7 @@ func Test_PlayerOne_Marking_Position_0_0_And_Position_0_1(t *testing.T) {
 }
 
 func Test_CheckWin_Win_Horizontal_FirstLine(t *testing.T) {
-	expected := "WIN Horizontal first line"
+	expected := "x WIN Horizontal first line"
 	player1 := NewPlayer("Mo", "x")
 	player2 := NewPlayer("Praw", "o")
 	game := NewGame(player1, player2, "x")
@@ -50,7 +50,7 @@ func Test_CheckWin_Win_Horizontal_FirstLine(t *testing.T) {
 }
 
 func Test_CheckWin_Win_Horizontal_SecondLine(t *testing.T) {
-	expected := "WIN Horizontal second line"
+	expected := "x WIN Horizontal second line"
 	player1 := NewPlayer("Mo", "x")
 	player2 := NewPlayer("Praw", "o")
 	game := NewGame(player1, player2, "x")
