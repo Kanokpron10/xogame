@@ -1,17 +1,23 @@
-package xogame
+package xogame_test
 
-import "testing"
+import (
+	"testing"
+	"xogame/xogame"
+)
 
-func Test_PlayGame_PlayerOne_Position_1_Shoud_Be_WIN(t *testing.T) {
-	expected := "WIN"
-	board := xogame.Board{
-		Board:          nil,
-		PlayerOneScore: 0,
-		PlayerTwoScore: 0,
-		DrawScore:      0,
+func Test_PlayerOne_Win_Horizontal_Line_First(t *testing.T) {
+	expected := "x WINNER"
+	player1 := xogame.NewPlayer("Mo", "x")
+	player2 := xogame.NewPlayer("Praw", "o")
+	game := xogame.NewGame(player1, player2, "")
+
+	game.Play(player1, 0, 0)
+	game.Play(player2, 1, 0)
+	game.Play(player1, 0, 1)
+	game.Play(player2, 1, 1)
+	actual := game.Play(player1, 0, 2)
+
+	if expected != actual {
+		t.Errorf("Expect %s but got %s", expected, actual)
 	}
-	player := xogame.Player{}
-
-	actual := player.PlayGame()
-
 }
