@@ -88,6 +88,15 @@ func (game Game) checkWinDiagonal() bool {
 	return false
 }
 
+func (game Game) checkFullBoard() bool {
+	for index := range game.Board {
+		if game.Board[index][index] != "" {
+			return true
+		}
+	}
+	return false
+}
+
 func (game *Game) switchTurn() {
 	if game.turn == "x" {
 		game.turn = "o"
