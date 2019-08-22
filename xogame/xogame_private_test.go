@@ -32,3 +32,19 @@ func Test_PlayerOne_Marking_Position_0_0_And_Position_0_1(t *testing.T) {
 		t.Errorf("Expect %v but got %v", expected, actual)
 	}
 }
+
+func Test_CheckWin_Win_Horizontal_FirstLine(t *testing.T) {
+	expected := "WIN"
+	player1 := NewPlayer("Mo", "x")
+	player2 := NewPlayer("Praw", "o")
+	game := NewGame(player1, player2, "x")
+
+	game.marking(player1, 0, 0)
+	game.marking(player1, 0, 1)
+	game.marking(player1, 0, 2)
+	actual := game.checkWin()
+
+	if expected != actual {
+		t.Errorf("Expect %v but got %v", expected, actual)
+	}
+}
