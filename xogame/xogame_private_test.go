@@ -34,7 +34,7 @@ func Test_PlayerOne_Marking_Position_0_0_And_Position_0_1(t *testing.T) {
 }
 
 func Test_CheckWin_Win_Horizontal_FirstLine(t *testing.T) {
-	expected := "x WIN Horizontal first line"
+	expected := "x WIN Horizontal"
 	player1 := NewPlayer("Mo", "x")
 	player2 := NewPlayer("Praw", "o")
 	game := NewGame(player1, player2, "x")
@@ -50,7 +50,7 @@ func Test_CheckWin_Win_Horizontal_FirstLine(t *testing.T) {
 }
 
 func Test_CheckWin_Win_Horizontal_SecondLine(t *testing.T) {
-	expected := "x WIN Horizontal second line"
+	expected := "x WIN Horizontal"
 	player1 := NewPlayer("Mo", "x")
 	player2 := NewPlayer("Praw", "o")
 	game := NewGame(player1, player2, "x")
@@ -69,8 +69,9 @@ func Test_SwitchTurn_Should_Be_O(t *testing.T) {
 	expected := "o"
 	player1 := NewPlayer("Mo", "x")
 	player2 := NewPlayer("Praw", "o")
-	game := NewGame(player1, player2, "x")
+	game := NewGame(player1, player2, "")
 
+	game.Play(player1, 0, 0)
 	game.switchTurn()
 	actual := game.turn
 
@@ -80,10 +81,10 @@ func Test_SwitchTurn_Should_Be_O(t *testing.T) {
 }
 
 func Test_SwitchTurn_Should_Be_X(t *testing.T) {
-	expected := "o"
+	expected := "x"
 	player1 := NewPlayer("Mo", "x")
 	player2 := NewPlayer("Praw", "o")
-	game := NewGame(player1, player2, "x")
+	game := NewGame(player1, player2, "")
 
 	game.Play(player1, 0, 0)
 	game.Play(player2, 1, 0)
