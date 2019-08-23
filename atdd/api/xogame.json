@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "5460bd59-e472-4ce8-8c91-e0bc2338b0ea",
+		"name": "XOGame",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Set PlayerOne is Mo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d3420224-9755-467b-9a2f-ed98dfdf1e32",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\"name\":\"Mo\",\n\t\t\"symbol\":\"x\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/xogame/player/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"xogame",
+						"player",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set PlayerTwo is Praw",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d3420224-9755-467b-9a2f-ed98dfdf1e32",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\"name\":\"Praw\",\n\t\t\"symbol\":\"o\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/xogame/player/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"xogame",
+						"player",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
